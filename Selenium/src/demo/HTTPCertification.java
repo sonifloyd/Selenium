@@ -23,8 +23,10 @@ public class HTTPCertification {
 		//Belows to your local browser
 		ChromeOptions c= new ChromeOptions();
 		c.merge(ch);
-		System.setProperty("webdriver.chrome.driver", "");
+		System.setProperty("webdriver.chrome.driver", "C://Users//ranad//Documents//Selenium//chromedriver_win32//chromedriver.exe");
 		WebDriver driver=new ChromeDriver(c);
+		driver.get("http://www.google.com");
+		
 
 	}
 
