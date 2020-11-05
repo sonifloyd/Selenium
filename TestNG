@@ -1,1 +1,12 @@
+What is TestNG.
+
+TestNG Advantage??
+
+How to download TestNG plugin in Eclipse
+Go to this link on google
+https://testng.org/doc/download.html
+2.Go to eclipse->Help->Install New Software
+Enter the update site URL in "Work with:" field:
+Update site for release: https://dl.bintray.com/testng-team/testng-eclipse-release/.
+Make sure the check box next to URL is checked and click Next.
 
