@@ -9,4 +9,5 @@ https://testng.org/doc/download.html
 Enter the update site URL in "Work with:" field:
 Update site for release: https://dl.bintray.com/testng-team/testng-eclipse-release/.
 Make sure the check box next to URL is checked and click Next.
+*If we want to check TestNG plugin is installed or not Eclipse->Window->Preferences- Type testNg on search box
 
