@@ -1,0 +1,28 @@
+What is explolatory testing.
+when documents are missing that testing called as 
+What are disadvantage of when documents are missing
+ans-if some functionality is bug we understood as feature and vice versa.
+What is agaile model.
+
+what is performance testing
+stability,checking respose time by appling load 
+Q.Major difference b/w smoke and sanity
+smoke testing when software is unstable basic functuinality is braking when  developer give new biuld and snaity when software is stable and do tesing
+What are the Stages of Software Test Life Cycle?
+Q10) How many principles are there in software testing?
+Q11) What is Pesticide Paradox?
+Q12) Explain the term Severity?
+Q13) What do you mean by Priority?
+Q14) What will be the Severity & Priority ?
+Q15) what are the major Attributes in Test Case ?
+Q16) Any two system Test Case?
+Q17) What is Ad-Hoc Testing?
+Q18) What are the disadvantages of not writing the test cases?22:25
+Q19) Tell whether its a Black Box or White Box Testing? 23:38
+Q20) What is Regression Testing? 23:53
+Q21) What is Re-Testing? 24:23
+Q22) What is Test Case Design Technique? 24:49
+Q23) What will be Boundry Test Cases? 25:42
+Q24) What can happen if you dont do testing ?27:35
+Q25) When can you feel , to stop the testing? 28:51
+Q26) What do you mean by Test Case Review Process? 29:47
