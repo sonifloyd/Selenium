@@ -1,0 +1,15 @@
+How to handle javascript exception in  Selenium.
+Like Element is not Clickable
+
+1.Using JavaScriptExecutor
+
+WebElement ele=driver.findElement(By.xpath("");
+JavaScriptExecutor jse=(JavaScriptExecutor)driver;
+jse.executeScript("argument[0].click()",ele);
+
+2.Using Action class
+Actions action=new Actions(driver);
+action.moveToElement(driver.findElement(By.xpath("")).click().build().perform();
+
+3.If u are using id use label x path
+4.If u are using two  same operationthan after one operation write object of class in b/w  operation 
