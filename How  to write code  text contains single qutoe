@@ -1,1 +1,6 @@
 
+##This is 'single quotes'
+contains[text(),"\This is 'single quotes'\")"]
+
+## This is in "Quotes"
+[contains(text(),'This is in "\Quotes\"')]
