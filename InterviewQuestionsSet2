@@ -1,1 +1,535 @@
+What type of test framework did you create using Selenium?
+While replying to such questions, stay focused, and keep your answer short and crisp. You can start by telling about the different components 
+in your framework and then explain them one by one.
 
+Here is an illustration for your help.
+
+I worked on a framework built on top of the Page Factory framework.
+I’ve created a page class for every web page in my application. It keeps the objects and the handler functions.
+Every page class has a followup test class where I create tests for related use cases.
+I used separate packages to host the pages and their test classes. It’s a best practice to do that way.
+The framework also had a lib package for utility and some standard wrapper functions over Selenium APIs.
+Java is ca ore programming language used for this project. It was primarily because the team had previous Java experience. Also, we could utilize the TestNG annotations and report features.
+Most test cases are data-driven. They require input from the external data source. So, I used Java property/POI class to read from the CSV/XLS files.
+We used the TestNG group feature for labeling test cases as P1, P2, and P3.
+The Log4J library provided the necessary support for tracing in our project.
+Instead of using the TestNG reporting, we preferred the Extent report. It has more graphical options and gives an in-depth analysis of the results.
+We built the framework with the help of Maven. Also, Jenkins provided support for automated build and execution.
+Bitbucket allowed us to manage our source code using git repositories.
+
+
+
+What are the main traits of a Software test automation framework?
+A test automation framework should have the following features.
+
+Flexible in the programming language selection
+Support of keywords and actions
+Provision of data sources for input
+Allow test case creation and modification
+Define test case priority
+Manual or automated execution
+Maintain test results history
+Generate test metrics such as test vs. code coverage
+Report creation
+CI tool integration such as Jenkins
+Cross-browser and cross-platform support
+
+
+
+What is Behavior Driven Development (BDD) framework?
+BDD follows most of the principles of TDD but replaces its unit-centric approach with a domain-centric design.
+
+It intends to bring in inputs not only from the Dev or QA but an array of stakeholders such as Product Owners, Technical Support, Managers, and Customers.
+
+The goal is to identify and automate appropriate tests that reflect the behavior sought by the principal stakeholders.
+
+
+
+
+What is Test-Driven Development (TDD) framework?
+TDD a.k.a. test-driven design is a software development paradigm that proposes to conduct unit testing frequently on the source code. It recommends to write tests, monitor, and refactor the code on failure.
+
+The concept of TDD came to light while a few XP (Extreme Programming) developers conceived it.
+
+It intends to prepare tests to check if the code breaks or not. After each test case failure, the developer should fix and re-run the test to verify the same. This process should repeat until all units function as per the design
+
+
+
+What are the two most common practices for automation testing?
+The two most frequently used practices for automation are as follows:
+
+Test-Driven Development (TDD) introduced in 2003
+Behavior Driven Development (BDD) got first heard in 2009
+
+
+
+What is the difference between hybrid and data-driven framework?
+A hybrid framework is a combination of both data-driven and keyword-driven Selenium frameworks.
+
+A data-driven framework works on the concept of separating data from the tests. It solely depends on the test input data.
+
+
+
+What is the principal difference between a Data-driven framework & a Keyword Driven framework?
+Data-driven framework (DDF)
+
+In a Data-driven framework, the test case logic is the part of test scripts.
+It advises keeping the input data separate.
+Usually, the test cases receive the data from the external files (XLS or CSV) and store them into variables. Later during execution, the variables serve as input as well as verification points.
+Keyword-driven framework (KDF)
+
+In KDF, there happens to be a table of keywords. Every keyword either maps to an action or an object.
+The actions reflect the product functionality, and the objects represent its resources such as web elements, command or the DB URL, etc.
+They remain detached from the test automation suite. Hence, the creation of the tests can continue with or without the AUT (application under test).
+The keyword-driven tests cover the full functionality of the application under test.
+
+
+
+What are the Open-source frameworks (OSF) does Selenium support?
+Selenium can integrate with the following Open Source frameworks.
+
+JUnit
+TestNG
+Maven
+FitNesse
+Xebium
+
+
+What is a Framework? What are the different types of frameworks available?
+A framework is a charter of rules and best practices to solve a problem systematically. There are various types of automation frameworks.
+
+Some of the most common ones are as follows:
+
+Data-Driven Testing Framework
+Keyword Driven Testing Framework
+Hybrid Testing Framework
+
+
+
+#Is TestNG capable of running multiple suites?
+Yes, we can run multiple testNG suites in the following manner:
+
+<suite name="SuperSuite">
+  <suite-files>
+    <suite-file path="subSuite1.xml" />
+    <suite-file path="subSuite2.xml" />
+    ...
+  </suite-files>
+</suite>
+We can also run various suites in parallel by using an Ant task.
+
+#How to associate a single test to multiple groups in TestNG?
+TestNG framework allows multiple tests to run by using the test group feature.
+
+We can associate a single test to multiple groups, as shown in the below example.
+
+@Test(groups = {"regression-testing", "smoke-testing"})
+
+
+
+#What is meant by grouping in TestNG?
+It is an innovative TestNG feature that didn’t exist in the JUnit. You can assign methods with proper context and refine groupings of test methods.
+
+
+#What is Data Provider in TestNG?
+The data provider is a TestNG annotation. It allows you to pass parameters like a property file or a database to a test method
+
+
+#What do you know about TestNG @Parameters?
+In TestNG, the “@Parameters” is a keyword that allows the arguments to pass to “@Test” methods.
+
+#What are TestNG annotations frequently used with Selenium?
+TestNG annotations prioritize the calling of a test method over others. Here are the ones to use with Selenium:
+
+@BeforeSuite – to run before all tests.
+@AfterSuite – to run only once after all tests.
+@BeforeClass – to run only once before the first test method.
+@AfterClass – to run only once after all the test methods of the current class finish execution.
+@BeforeTest – to run before any test method inside the “Test” tag.
+@AfterTest – to run after any test method inside the “Test” tag.
+
+
+#How to handle a proxy using Selenium in Java?
+Selenium implements a PROXY class to configure the proxy. See below example:
+
+String setPROXY = "10.0.0.10:8080";
+
+org.openqa.selenium.Proxy allowProxy = new.org.openqa.selenium.Proxy();
+allowProxy.setHTTPProxy(setPROXY)
+          .setFtpProxy(setPROXY)
+          .setSslProxy(setPROXY);
+DesiredCapabilities allowCap = new DesiredCapabilities();
+allowCap.setCapability(CapabilityType.PROXY, allowProxy);
+WebDriver driver = new FirefoxDriver(allowCap);
+
+
+How to resolve the SSL certificate issue in IE?
+In the internet explorer, it is somewhat trivial to ignore the SSL error. Please add the below line of code and safely skip the SSL issue.
+
+// Copy the below code after opening the browser.
+
+driver.navigate().to("javascript:document.getElementById('overridelink').click()");
+
+
+#How to resolve the SSL certificate issue (secured connection error) in Firefox with WebDriver?
+There can be many reasons for the secured connection error. It could be because of the following:
+
+While a site is getting developed, it may not have the right SSL certificate.
+The site may be using a self-signed certificate.
+The SSL may not have configured appropriately at the server end.
+However, you still want to test the site’s standard functionality using Selenium. Then, the idea is to switch off the SSL setting and ignore the SSL error.
+
+Check out the below code to disable the SSL in Selenium.
+
+FirefoxProfile ssl = new FirefoxProfile();
+
+ssl.setAcceptUntrustedCertificates(true);
+
+ssl.setAssumeUntrustedCertificateIssuer(false);
+
+WebDriver ins = new FirefoxDriver(ssl);
+
+
+
+How to simulate Mouse over action on a submenu option under a header menu?
+Using the Actions object, you can first move the menu title, and then proceed to the popup menu item and click it. Don’t at all miss to invoke the “actions.Perform()” at the end. Check out the below Java code:
+
+Actions acts = new Actions(driver);
+WebElement menuHoverLink = driver.findElement(By.linkText("Menu heading"));
+acts.moveToElement(menuHoverLink);
+WebElement subLink = driver.findElement(By.cssSelector("#headerMenu .subLink"));
+acts.moveToElement(subLink);
+acts.click();
+acts.perform();
+
+
+#What is the right way to capture a screenshot in Selenium?
+Sometimes, an image than a trace log can help us identify the right reason for an error. The code in the below example will capture the image and store it in a file.
+
+Import org.apache.commons.io.FileUtils;
+WebDriver ins = new ChromeDriver();
+ins.get("http://www.google.com/");
+
+File screen = ((TakesScreenshot)ins).getScreenshotAs(OutputType.FILE);
+// Now you can do whatever you need to do with it, for example copy somewhere
+
+FileUtils.copyFile(screen, new File("c:\tmp\myscreen.png"));
+What are User Extensions, and how do you create them?
+User extensions are a set of functions written in JavaScript. They are present in a separate known as the extension file. Selenium IDE or Selenium RC access it to activate the extensions.
+
+Selenium’s core has a JavaScript codebase. So, we can also use it to create the extension.
+
+The extension has a specific format, as given below.
+
+// sample
+Selenium.prototype.doFunctionName = function(){
+
+}
+The function name begins with a “do” prefix. It signals Selenium to interpret this function as a command.
+
+It means we can call the above function inside any of our steps.
+
+#What is a Page Factory in Selenium WebDriver?
+Page Factory is a method to set up the web elements within the page object.
+
+public class LogInPage
+{
+    @FindBy(id="userName")
+    private WebElement user;
+
+    @FindBy(id="password")
+    private WebElement pass;
+
+    public LogInPage() {
+        PageFactory.initElements(browser, this); // Setup the members as browser.findElement()
+    }
+
+    public void processLogIn() {
+        user.sendKeys("john");
+        pass.sendKeys("password");
+    }
+}
+
+#What is a Page Object in Selenium WebDriver?
+First of all, both these terms belong to the Page Object Model (POM), a design pattern in Selenium. Let’s now see how are they different from each other.
+
+Page Object is a class in POM corresponding to a web page. It captures the functionality as functions and objects as members.
+
+public class LogInPage
+{
+    private WebElement user;
+    private WebElement pass;
+
+    public LogInPage() {
+    }
+
+    public void findObjects() {
+        user = browser.findElement(By.id("userName"));
+        pass = browser.findElement(By.id("password"));
+    }
+
+    public void processLogIn() {
+        user.sendKeys("john");
+        pass.sendKeys("password");
+    }
+}
+
+
+#How to work with AJAX controls in WebDriver?
+AJAX is an acronym for Asynchronous JavaScript and XML. It is independent of the opening and closing tags required for creating valid XML.
+
+Sometimes, the WebDriver itself manages to work with the Ajax controls and actions. However, if it doesn’t succeed, then try out the below code.
+
+//Waiting for Ajax Control
+
+WebElement AjaxCtrl = (new WebDriverWait(driver, 10)).until(ExpectedConditions.presenceO
+WebElement AjaxCtrl = (new WebDriverWait(driver, 10)).until(ExpectedConditions.presenceOfElementLocated(By. &lt;locatorType&gt;("&lt;locator Value&gt;")));
+
+
+#How to handle AJAX controls using Selenium?
+Let’s understand the handling of AJAX with an example.
+
+Consider the Google search text box, which is an Ajax control. Whenever we write some text into the box, it shows up a list of auto-suggested values.
+
+To automate this type of element, we need to grab the above list in a string as soon as the box receives input. After that, we can split and take the values one by one.
+
+
+
+#How can you access a Database from Selenium?
+Selenium doesn’t have a direct API to access a database. Hence, we can look for its support in the programming language we choose to work with Selenium.
+
+For illustration purposes, we used Java with Selenium.
+
+Java provides the Connection class to initiate a connection with the database. It has a getConnection() method that we need to call. For this, we’ll make a Connection Object. It’ll manage the connection to the database.
+
+Please note: An application could have one or more connections opened to a database or different databases.
+
+Here is a short overview of the steps to be performed.
+
+Firstly, we establish a connection with the database.
+After that, we call the DriverManager.getConnection() method.
+This method accepts a string pointing to the database URL.
+The DriverManager class then attempts to find a driver to access the database URL.
+After it finds a suitable driver, the call to the getConnection() method succeeds.
+Syntax:
+
+String url = "jdbc: odbc: makeConnection";
+
+Connection con = DriverManager.getConnection(url, "userID", "password");
+
+
+
+#How to handle multiple popup windows in Selenium?
+Selenium provides the getWindowHandles() method, which returns the handles for all open popups.
+
+We can store them into a <String> variable and convert it into an array.
+
+After that, we can traverse the array and navigate to a specific window by using the below code.
+
+driver.switchTo().window(ArrayIndex);
+Alternatively, we can use the Java Iterator class to iterate through the list of handles. Find below is the code to handle multiple windows using Selenium.
+
+String hMyWindow = driver.getWindowHandle();
+WebDriver popup = null;
+Iterator<String> hWindows = driver.getWindowHandles();
+while(hWindows.hasNext()) { 
+ String hWindow = hWindows.next(); 
+ popup = driver.switchTo().window(hWindow);
+ if (popup.getTitle().equals("HandlingMultipleWindows") {
+ break;
+ }
+}
+
+
+#How to handle Windows-based alerts/pop-ups in Selenium?
+Handling a window-based pop-up is not straight-forward. Selenium only supports web applications and doesn’t provide a way to automate Windows-based applications. However, the following approaches can help.
+
+Use the Robot class (Java-based) utility to simulate the keyboard and mouse actions. That’s how you can handle the window based pop.
+The KeyPress and KeyRelease methods simulate the user pressing and releasing a specific key on the keyboard.
+
+How to handle Web-based alerts/pop-ups in Selenium?
+WebDriver exposes the following APIs to handle such popups.
+
+Dismiss(): It handles the alert by simulating the Cancel button.
+Accept(): It handles the alert window by simulating the Okay button.
+GetText(): You may call it to find out the text shown by the alert.
+SendKeys(): This method simulates keystrokes in the alert window.
+
+
+
+How do you check for the presence of a web element after the successful page load?
+We can verify the presence of a web element with the following code.
+
+While using the below function, do supply some timeout value (in seconds) to check the element in a regular interval.
+
+public void checkIfElementPresent(String element, int timeout) throws Exception {
+    for (int sec = 0;; sec++) {
+        if (sec >= timeout)
+            fail("Timeout! Couldn't locate element." + element);
+        try {
+            if (selenium.isElementPresent(element))
+                break;
+        } catch (Exception ex) {
+        }
+        Thread.sleep(1000);
+    }
+}
+
+
+#How do you check if an object is present on multiple pages?
+We can use the isElementPresent() command to verify the object on all pages.
+
+assertTrue(selenium.isElementPresent(locator));
+
+
+#State the difference between Web driver’s close() and quit() methods?
+These two methods perform the same task, i.e., the closing of the browser. However, there is a slight difference.
+
+webdriver.close(): It closes the active WebDriver instance.
+webdriver.quit(): It closes all the WebDriver instances opened at a time.
+State the difference between Web driver’s findElement() and findElements() methods?
+
+Both these methods traverse the DOM looking for the target web element. However, there are some basic differences between them.
+
+1. The findElement() method returns the first WebElement matching the locator, whereas the findElements() fetches all passing the locator criteria.
+
+// Syntax of findElement()-
+WebElement item = webdriver.findElement(By.id("<<ID value>>"));
+// Syntax of findElements()-
+List <WebElement> items = webdriver.findElements(By.id("<<ID value>>"));
+2. Another difference is if no element is matched, then the findElement() raises NoSuchElementException whereas findElements() returns an empty list.
+
+
+
+
+#State the difference between Web driver’s getWindowHandle() and getWindowHandles() methods?
+webdriver.getWindowHandle() – It gets the handle of the active web page.
+webdriver.getWindowHandles() – It gets the list of handles for all the pages opened at a time.
+
+#What is the Selenium command to delete session cookies?
+To delete session cookies, we can invoke the deleteAllCookies() method.
+
+webdriver.manage().deleteAllCookies();
+
+
+#What is the Selenium command to set the browser maximized?
+We can maximize the browser window by calling Selenium’s maximize() method.
+
+It sets the current window in the maximized state.
+
+webdriver.manage().window().maximize();
+
+
+
+#What is the Selenium command to fetch the current page URL?
+To retrieve the current page URL, we can call the getCurrentURL() function.
+
+webdriver.getCurrentUrl();
+
+
+#How can I move back and forth in a browser using Selenium?
+Selenium provides the following methods for moving back and forth in a browser.
+
+1) navigate().forward() – to move to the next web page as per the browser’s history
+2) navigate().back() – to move back to the previous page as per the browser’s history
+3) navigate().refresh() – to reload the current page
+4) navigate().to(“URL”) – to start a new browser window and opening up the specified link
+
+
+#What is the principal difference between “GET” and “NAVIGATE” methods?
+Get method makes a page to load or extracts its source or parse the full text. On the contrary, the navigate method tracks the history and can perform operations like refresh, back, and forward.
+
+For example – We like to move forward, execute some functionality and then move back to the home page.
+
+We can achieve this by calling the Selenium’s navigate() API.
+
+The driver.get() method waits until the page finish loading.
+The driver.navigate() will only redirect and return immediately.
+
+
+
+#Is it mandatory to prefix the URL with HTTP or HTTPS while calling the web driver’s get() method?
+Yes, if the URL doesn’t contain the HTTP prefix, then the program will throw an exception.
+
+Hence, it is mandatory to pass the HTTP or HTTPS protocol while calling the web driver’s get() method.
+
+What is the other method which gives the same effect as we get from the web driver’s get()?
+Selenium provides the “navigate.to(link)” method. It does the same thing as we achieve from the get() call.
+
+
+
+#What is the Selenium command to delay test execution for 10 seconds?
+In Java, we can use the following method to halt the execution for a specified no. of milliseconds.
+
+java.lang.Thread.sleep(long milliseconds)
+To halt for 10 seconds, we can issue the following command:
+
+Thread.sleep(10000)
+
+What is the command to press enter inside the HTML text box using Selenium Webdriver?
+Selenium provides Enum Key macros to simulate the enter action.
+
+webdriver.findElement(By.xpath("<<xpath>>")).sendKeys(Keys.ENTER);
+
+
+What is the command to submit the HTML form in Selenium Webdriver?
+Selenium provides the submit() function to finalize a HTML form.
+
+webdriver.findElement(By.id("<<htmlform>>")).submit();
+However, we can also achieve the same effect by calling the click() method.
+
+
+What is the command to click on a hyperlink in Selenium Webdriver?
+Selenium provides the click() function to click on a HTML link.
+
+webdriver.findElement(By.linkText("Selenium Interview Questions")).click();
+
+
+
+What is the command to get the attribute value in Selenium Webdriver?
+Selenium provides the getAttribute(value) function to read the value inside the text element.
+
+String strValue = webdriver.findElement(By.name("<<attrname>>")).getAttribute("value");
+System.out.println("Attribute value is: " + strValue);
+
+
+#What is the command to get the value of a text box in Selenium Webdriver?
+Selenium provides the getText() function to read the value inside the text element.
+
+package webdriverdemo;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+public class demoClass {
+ 
+ @Test
+ public void readText() {
+    System.setProperty("webdriver.chrome.driver", "<<chromedriver.exe>>");
+    WebDriver webdriver = new ChromeDriver();
+    webdriver.get("https://www.google.com");
+    String strText = webdriver.findElement(By.xpath("<<xpath expr>>")).getText();
+    System.out.println("Text element contains: " + strText);
+ }
+};
+
+
+
+
+What is the command to reset the HTML text box in Selenium Webdriver?
+Selenium provides the clear() function to reset the value inside the text element.
+
+WebDriver webdriver = new FirefoxDriver();
+webdriver.get("https://www.google.com");
+webdriver.findElement(By.xpath("<<xpath expr>>")).sendKeys("Selenium Interview Questions");
+webdriver.findElement(By.xpath("<<xpath expr>>")).clear();
+
+
+#What is the method to read the JavaScript variable using Selenium WebDriver?
+Again, we can utilize the JavascriptExecutor class to read the value of a JS variable. See the below code.
+
+// Set up the JavaScript object
+JavascriptExecutor jscript = (JavascriptExecutor) webdriver;
+// Read the site title
+String strTitle = (String)jscript.executeScript("return document.title");
+System.out.println("Webpage Title: " + strTitle);
