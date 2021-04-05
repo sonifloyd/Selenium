@@ -33,3 +33,6 @@ Batterylife.
 water resistive(How much pressure it can take)
 Performance in the presence magnetic field
 #Test Cases for lift
+
+#You are hosting a game in your server. All the users are connected to the game. 
+When one user tries to connect to the multiplayer game he gets Error Occured message. How would you troubleshoot this scenario?
