@@ -1,0 +1,35 @@
+TestCases for Aelarm clock
+Wall Clock:
+UI:
+Numbers read from 1 - 12 and in order and in clockwise
+Seconds pointers
+Clock minute hours and seconds hands
+Size of those hands
+material used for those
+Font of those numbers
+Option to set/reset the clock
+
+
+System testing
+Validate the movement of minute second and hours
+Caluclate the accuracy of the seconds,minutes,Hours over period
+movement of minutes seconds and hours from each ones perspective
+Date(leapyear,months with different dates)
+Set/rest the clock
+Change the battery
+Night vision
+Grip ofthe watch
+
+
+Recovery scenarios
+Working of clock with battery and without battery
+
+Integration testing
+
+Performance testing
+Clock performance with low battery and full battery (check in regular intervals)
+High pressure,Low pressure
+Batterylife.
+water resistive(How much pressure it can take)
+Performance in the presence magnetic field
+#Test Cases for lift
