@@ -1,0 +1,5 @@
+
+<a href="#">Forgot your password?</a>
+driver.findElements(By.linkktext("Forgot your password?"));
+
+
