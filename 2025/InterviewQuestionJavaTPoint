@@ -1,0 +1,14 @@
+50) How to click on a hyper link using linkText?
+driver.findElement(By.linkText("Google")).click();
+
+driver.findElement(By.partialLinkText("Goo")).click();  
+
+
+49) How can you find if an element is displayed on the screen?
+
+isDisplayed():  
+boolean buttonPresence = driver.findElement(By.id("gbqfba")).isDisplayed();  
+isSelected():  
+boolean buttonSelected = driver.findElement(By.id("gbqfba")).isSelected();  
+isEnabled():  
+boolean searchIconEnabled = driver.findElement(By.id("gbqfb")).isEnabled();
