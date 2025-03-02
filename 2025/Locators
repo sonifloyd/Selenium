@@ -3,3 +3,65 @@
 driver.findElements(By.linkktext("Forgot your password?"));
 
 
+
+
+
+---XPath--------
+How many ways we can write xpath 
+1.Absolute XPath
+Starts from the root node (html) and goes till the target element.
+/html/body/div/div[2]/input
+
+2.Relative XPath
+//input[@id='username']
+✅ Recommended ✅ (Short & flexible)
+
+3.XPath by Attribute
+Locate element using attributes like id, name, class, type, etc.
+
+//input[@name='email']
+
+4.XPath by Text
+Locate element using visible text.
+//button[text()='Login']
+
+5.Contains() Function
+
+When attribute value is dynamic or partial.
+Example:
+xpath
+//input[contains(@id, 'user')]
+
+6.Starts-with() Function
+Matches elements whose attribute starts with a certain value.
+Example:
+xpath
+//input[starts-with(@id, 'login')]
+
+7.XPath with AND/OR Conditions
+Example:
+xpath
+//input[@type='text' and @name='email']
+
+8.XPath using Parent-Child Relationship
+
+//div[@class='form-group']/input
+
+9.XPath using Following-Sibling
+Example:
+xpath
+//label[text()='Email']/following-sibling::input
+
+10.XPath using Ancestor & Descendant
+//div[@class='container']//input[@id='email']
+-----------                                ---------------------------------------------------
+
+
+
+
+<input type="password" placeholder="Password" name="inputPassword" value="">
+//input[@placeholder='Password'] 
+//input[@type='password']
+//input[@name='inputPassword']
+
+
