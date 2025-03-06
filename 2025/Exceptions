@@ -1,0 +1,87 @@
+Exception Name	Reason	Example
+NoSuchElementException	Element nahi mila	Wrong Locator
+TimeoutException	Wait Time Complete + Element nahi mila	WebDriverWait
+StaleElementReferenceException	Element Page Reload ke baad Old Ho Gaya	Page Refresh
+ElementClickInterceptedException	Element ko dusra element cover kar raha hai	PopUp ya Modal
+NoSuchWindowException	Window close ho gayi	Driver.switchTo().window()
+NoSuchFrameException	Frame locator galat hai	Driver.switchTo().frame()
+InvalidSelectorException	XPath galat hai	driver.findElement(By.xpath("//input[@id='')]")
+ElementNotVisibleException	Element hidden hai	driver.findElement(By.id("username"))
+WebDriverException	Driver close hone ke baad command diya	driver.quit() ke baad
+InterruptedException	Thread.sleep() ke time pe koi aur action	Thread.sleep(5000)
+
+
+------
+1. NoSuchElementException
+👉 Reason:
+
+Locator galat hai
+Element page pe available nahi hai
+DOM load hone mein time lag raha hai
+Solution:
+Use Explicit Wait
+
+WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("username")));
+2. TimeoutException
+👉 Reason:
+
+Element milne se pehle hi wait time complete ho gaya
+Solution:
+Wait ka time increase karo
+wait.until(ExpectedConditions.elementToBeClickable(By.id("loginBtn")));
+3. StaleElementReferenceException
+👉 Reason:
+
+Page Refresh ya DOM change ho gaya
+Element ka reference out of date ho gaya
+Solution:
+Element ko dobara find karo
+
+WebElement element = driver.findElement(By.id("login"));
+element.click();
+4. ElementClickInterceptedException
+👉 Reason:
+
+Element ke upar pop-up ya ad aa gaya
+Solution:
+👉 First wait karo
+👉 Then click
+
+WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+wait.until(ExpectedConditions.elementToBeClickable(By.id("submitBtn"))).click();
+5. NoSuchWindowException
+👉 Reason:
+
+Tum Window ke handle ka wrong ID use kar rahe ho
+Solution:
+String parentWindow = driver.getWindowHandle();
+driver.switchTo().window(parentWindow);
+Bonus Question 🔥
+Q: How to Handle Multiple Windows in Selenium?
+✅ Answer:
+
+Set<String> windows = driver.getWindowHandles();
+for(String window : windows) {
+    driver.switchTo().window(window);
+}
+✅ Full Exception Crack Table
+Exception Name	Interview Cracking Line
+NoSuchElementException	Locator Galat Hai Sai Baba Ki Beti Ko Nahi 😏
+TimeoutException	Wait Time Khatam + Papi Aadmi Ab Gaya 😂
+StaleElementReferenceException	Page Refresh Hoke Taqdeer Badal Chuki Hai 💪🔥
+ElementClickInterceptedException	Pop-Up Toh Aa Jayenge... Lekin Sai Baba Ki Beti Toh Click Karke Rahegi 😏
+Important Notes 🔥
+✅ Interviewer ko bol dena: 👉 "Thread.sleep()" Galtiyon Ki Maa Hai
+👉 Waits + Exception Handling Google Girl Ki Pehchan Hai
+
+Last Question (99% Interviews Mein Yeh Pooch Rahe Hai 🔥)
+Q: Can we handle Exceptions using Try-Catch in Selenium?
+
+✅ Answer: Haan Ji 💪
+
+try {
+    driver.findElement(By.id("login")).click();
+} catch(NoSuchElementException e) {
+    System.out.println("Element not Found");
+}
