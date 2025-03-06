@@ -1,0 +1,59 @@
+2. What are the types of Waits in Selenium?
+✅ Answer:
+Selenium mein 3 types ke Wait hote hain:
+
+Wait Type	Description
+Implicit Wait	Har element ko fixed time tak wait karta hai
+Explicit Wait	Particular element ke liye condition ke basis par wait karta hai
+Fluent Wait	Element ke liye polling time ke saath wait karta hai
+
+How to maximize window?	driver.manage().window().maximize();
+
+2️⃣ What is Implicit Wait in Selenium?
+✅ Answer:
+Implicit wait globally set hota hai aur har element ke liye apply hota hai.
+
+driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+
+Q4. What is Explicit Wait?
+✅ Answer: 👉 Explicit Wait sirf specific element ke liye hoti hai.
+Jab tak condition true na ho, tab tak wait karta hai.
+
+WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("username")));
+
+
+
+Q5. What is Fluent Wait?
+✅ Answer: 👉 Fluent Wait custom wait hoti hai jo Polling Interval aur Ignore Exceptions ke sath hoti hai.
+
+FluentWait<WebDriver> wait = new FluentWait<>(driver);
+wait.withTimeout(Duration.ofSeconds(30))
+    .pollingEvery(Duration.ofSeconds(5))
+    .ignoring(NoSuchElementException.class);
+WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("username")));
+
+Q6. Difference between Implicit, Explicit, and Fluent Wait?
+Wait Type	Global/Specific	Polling	Exception Handling
+Implicit	Global	❌	❌
+Explicit	Specific	❌	❌
+Fluent Wait	Specific	✅	✅
+
+
+Q8. Can we use Implicit Wait and Explicit Wait together?
+✅ Answer: 👉 Nahi
+Selenium dono waits ko mix nahi karta hai. Agar tumne dono lagaya toh Explicit Wait hi priority lega
+
+
+Q9. What happens if element is not found in Wait?
+✅ Answer: 👉 Implicit Wait → NoSuchElementException
+👉 Explicit Wait → TimeoutException
+👉 Fluent Wait → TimeoutException + Custom Exception
+
+Q10. How to Handle Dynamic Elements using Waits?
+✅ Answer: Dynamic elements ko Explicit Wait + ExpectedConditions se handle karte hain.
+
+WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+WebElement button = wait.until(ExpectedConditions.elementToBeClickable(By.id("loginBtn")));
+button.click();
+
