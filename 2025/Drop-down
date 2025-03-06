@@ -1,0 +1,84 @@
+1. How to handle dropdown in Selenium?
+✅ Answer: Dropdown ko handle karne ke liye Select class ka use hota hai.
+
+Syntax:
+
+Select select = new Select(driver.findElement(By.id("dropdown")));
+select.selectByVisibleText("Option1"); // Select by visible text
+
+
+2. Dropdown ko select karne ke kitne tareeke hain?
+✅ Answer: Dropdown ko 3 tareeke se select kar sakte hain:
+
+Method	Description
+selectByVisibleText()	Option name se select karega
+selectByValue()	Option ke value attribute se select karega
+selectByIndex()	Option ke index se select karega
+
+3. Dropdown mein Total Kitne Options hain, yeh kaise check karte hain?
+✅ Answer:
+
+Select select = new Select(driver.findElement(By.id("dropdown")));
+List<WebElement> options = select.getOptions();
+System.out.println("Total options: " + options.size());
+
+
+4. How to select multiple options in dropdown?
+✅ Answer: Sirf multi-select dropdown mein yeh possible hai.
+
+Select select = new Select(driver.findElement(By.id("dropdown")));
+if(select.isMultiple()) {
+    select.selectByIndex(1);
+    select.selectByIndex(2);
+}
+
+5. How to deselect options from dropdown?
+✅ Answer:
+
+select.deselectAll();
+select.deselectByVisibleText("Option1");
+
+1. How to handle Multiple Windows in Selenium?
+✅ Answer:
+
+
+String parent = driver.getWindowHandle();
+Set<String> allWindows = driver.getWindowHandles();
+
+for (String window : allWindows) {
+    if (!window.equals(parent)) {
+        driver.switchTo().window(window);
+    }
+}
+
+2. What is the difference between getWindowHandle() and getWindowHandles()?
+Method	Description
+getWindowHandle()	Parent window ka ID return karta hai
+getWindowHandles()	Sare open windows ke ID ka Set return karta hai
+
+
+3. How to close only the child window?
+✅ Answer:
+
+String parent = driver.getWindowHandle();
+Set<String> allWindows = driver.getWindowHandles();
+
+for (String window : allWindows) {
+    if (!window.equals(parent)) {
+        driver.switchTo().window(window);
+        driver.close(); // Child window close
+    }
+}
+driver.switchTo().window(parent); // Back to parent
+
+
+4. How to switch to Alert pop-up?
+✅ Answer:
+
+
+Alert alert = driver.switchTo().alert();
+alert.accept(); // OK
+alert.dismiss(); // Cancel
+
+
+How to maximize window?	driver.manage().window().maximize();
