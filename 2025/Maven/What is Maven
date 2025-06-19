@@ -1,0 +1,5 @@
+What is Maven ?
+Central repository to get dependencies 
+Maintaing common structure across the organization 
+Flexbility in intregrating the CI tools
+Plugings for test framework execution .
