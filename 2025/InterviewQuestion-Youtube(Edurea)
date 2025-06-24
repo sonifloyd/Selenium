@@ -1,3 +1,84 @@
 What is selenium ?
 It is an open source too, for automation  web testing across browers ,languages ,and plateforms ,intergratining seamlessly 
-with developemt plateform.
+with developemt platform.
+
+2. What are different componet of selenium
+selenium IDE 
+selenium RC 
+selenium web driver 
+selenium grid 
+
+3. What is advanvantage of using selenium 
+1.open source 
+2.cross platform -> windows , linux ,mnac 
+3.multi language 
+4.cross browser testing -> chrome , firefox ,edge 
+5. Paralle execution -> selenonium grid use for parallel execution.
+
+4. What is web driver ?
+
+5. What is selenium 4?
+
+6.What are some noteworthy selenium 4 features ?
+1. selenium grid -easy setup with hub and node support 
+2.screenshort capture -> element ,section ,page level
+3.edge chromium - support the chromium driver 
+4.relative locators -> now available .
+
+7. What is diiference b/w get and naviage to() methods
+get("URL") -loads a page and waits untill it is fully loaded .
+navigate().to(""URL)- just navigate  without waiting 
+
+
+8. What are different waits in selenium web driver .
+1.implicit wait 
+2.explicit wait 
+3.fluent wait 
+
+9. what is difference b/w webdriver.findelement vs webelement.findelement
+
+
+10. what are all design pattern of selenium framework.
+
+1.page object 
+2.
+3.
+
+11. what are all locators that supports selenium 
+12. what are differnce b/w xpath and css selector 
+xpath is slower is slower than css 
+13 .what is differnce b/w page object model and page factory 
+14.driver.close() vs driver.quite()
+driver.close()- close the current window 
+driver.quite()- close the all window and end  the session.
+
+15.advatage of using POM ?
+enhances the code reuseablity  and maintainbility 
+reduce code dublication 
+improve readbility and scalability 
+16.Can captcha be automated ?
+no 
+
+17. what are the exception are in selenium 
+1. no such elment excetoion 
+2.nosuch frameexception 
+3. no such window exception
+4.noalertpresentexception 
+elementnotintertrableexception
+timeout exception
+statelementreferceexception
+invalideselectorexcetion
+sessionNotCreatedExcetion
+
+
+18. How should one handle windows-based alerts or pop-ups in selenium 
+java robot class can use for keyborrd and mouse action b/w selenium only for web 
+
+
+19. wht are testng annotation frequety use in selenium 
+
+
+
+
+
+
