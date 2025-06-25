@@ -3,3 +3,7 @@ Central repository to get dependencies
 Maintaing common structure across the organization 
 Flexbility in intregrating the CI tools
 Plugings for test framework execution .
+
+
+What is Maven?
+Maven is a build automation and dependency management tool for Java-based applications, using an XML file (pom.xml) to manage configuration.
