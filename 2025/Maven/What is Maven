@@ -6,4 +6,109 @@ Plugings for test framework execution .
 
 
 What is Maven?
-Maven is a build automation and dependency management tool for Java-based applications, using an XML file (pom.xml) to manage configuration.
+Maven is a build automation and dependency management tool for Java-based applications, using an XML file (pom.xml) to manage configuration
+.
+
+
+What is a POM file?
+POM stands for Project Object Model. It is an XML file (pom.xml) that contains information about the project, configuration details, dependencies, plugins, and goals.
+
+What are the main advantages of using Maven?
+
+Automatic dependency management
+
+Standard directory layout
+
+Easy project build process
+
+Reusability through plugins and goals
+
+Integration with CI/CD tools like Jenkins
+
+
+What is the default location of the local Maven repository?
+~/.m2/repository (on Unix/Linux/Mac) or C:\Users\<username>\.m2\repository (on Windows)
+
+
+What are Maven build life cycles?
+
+Clean: Cleans project build directory (target)
+
+Default (or Build): Handles project deployment
+
+Site: Generates documentation for the project
+
+
+What is the difference between compile, provided, runtime, and test scopes?
+
+compile: Required at compile and runtime (default)
+
+provided: Required at compile-time but provided by the container (e.g., servlet-api)
+
+runtime: Not needed at compile-time but needed at runtime (e.g., JDBC drivers)
+
+test: Used only during testing
+
+What are transitive dependencies in Maven?
+When your dependency has its own dependencies, Maven automatically includes them unless excluded.
+
+What is the purpose of the mvn clean install command?
+
+clean: Deletes the target directory
+
+install: Builds the project and installs it into the local repository
+
+
+What is a plugin in Maven?
+Plugins add goals/tasks to the build process. Examples include:
+
+maven-compiler-plugin: For compiling Java code
+
+maven-surefire-plugin: For running unit tests
+
+What is the difference between dependencyManagement and dependencies?
+
+dependencyManagement: Specifies versions for dependencies used in sub-modules, but doesn't include them in the build unless explicitly added in the dependencies section.
+
+dependencies: Directly adds dependencies to the build.
+
+What are Maven profiles? How do you activate them?
+Maven profiles allow custom build configurations (e.g., for different environments).
+
+xml
+Copy
+Edit
+<profiles>
+  <profile>
+    <id>dev</id>
+    ...
+  </profile>
+</profiles>
+Activate using:
+mvn clean install -Pdev
+
+How to deploy an artifact to a remote repository like Nexus or Artifactory?
+Configure <distributionManagement> in pom.xml and use mvn deploy. Authentication and URL are usually in settings.xml.
+
+
+What is the purpose of settings.xml in Maven?
+It stores configuration for Maven, like:
+
+Remote repository credentials
+
+Proxies
+
+Mirrors
+
+What is the difference between install and deploy goals?
+
+install: Puts the built artifact in the local .m2 repository
+
+deploy: Uploads the artifact to a remote repository (e.g., Nexus)
+
+How do you use Maven in CI/CD pipelines (e.g., with Jenkins)?
+
+How do you handle conflicting dependency versions?
+
+How do you speed up Maven builds?
+
