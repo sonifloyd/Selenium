@@ -1,0 +1,19 @@
+What is frame?
+A frame is a webpage inside another webpage. Selenium cannot directly 
+interact with elements inside a frame, so we use driver.switchTo().frame() to switch focus to that frame before performing actions.
+
+2. How to switch to frame?
+
+driver.switchTo().frame()
+
+Ways:
+
+by index
+
+by name
+
+by WebElement
+
+3. How to come back from frame?
+
+driver.switchTo().defaultContent()
