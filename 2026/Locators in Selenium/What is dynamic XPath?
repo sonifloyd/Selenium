@@ -1,0 +1,37 @@
+Dynamic XPath is used to locate web elements whose attributes change dynamically
+every time the page loads. It uses functions like contains() or starts-with() to create flexible locators.
+
+Dynamic XPath ek aisa XPath hota hai jo dynamic (change hone wale) elements ko locate karne ke liye use hota hai.
+
+Bahut websites me element ka id ya attribute har page load par change ho jata hai.
+Aise case me exact XPath kaam nahi karta, isliye dynamic XPath use karte hain.
+
+Example of Dynamic Element
+HTML:
+<input id="user_12345" type="text">
+
+Next time page load hone par:
+
+<input id="user_67890" type="text">
+
+Agar hum likhen:
+
+driver.findElement(By.xpath("//input[@id='user_12345']"));
+
+To next time element locate nahi hoga.
+-------------------
+Dynamic XPath Solution
+1️⃣ Using contains()
+driver.findElement(By.xpath("//input[contains(@id,'user')]"));
+
+➡️ Id change hone par bhi element locate ho jayega.
+
+2️⃣ Using starts-with()
+driver.findElement(By.xpath("//input[starts-with(@id,'user')]"));
+3️⃣ Using text()
+driver.findElement(By.xpath("//button[text()='Login']"));
+-------------------------------------------------------------------------------------------
+Why Dynamic XPath is Used
+Dynamic elements handle karne ke liye
+Page reload hone par attribute change hone par
+Stable locator banane ke liye
