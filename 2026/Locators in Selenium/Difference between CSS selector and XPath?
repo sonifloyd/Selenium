@@ -1,0 +1,14 @@
+| Feature           | CSS Selector                                | XPath                                            |
+| ----------------- | ------------------------------------------- | ------------------------------------------------ |
+| **Language Type** | CSS based syntax                            | XML path language                                |
+| **Performance**   | Faster than XPath                           | Slightly slower                                  |
+| **Direction**     | Only **forward direction** (parent → child) | Both **forward and backward** (parent ↔ child)   |
+| **Syntax**        | Simple aur short                            | Thoda complex                                    |
+| **Traversing**    | Parent se child locate kar sakte hain       | Parent, child, sibling sab locate kar sakte hain |
+| **Text Handling** | Direct text search possible nahi            | Text search possible hai                         |
+| **Usage**         | Mostly preferred for speed                  | Complex elements locate karne ke liye            |
+
+
+CSS Selector is generally faster and uses CSS syntax to locate elements, but it only supports forward traversal in the DOM. XPath is 
+more powerful because
+it allows both forward and backward traversal and can locate elements using text and complex relationships.
