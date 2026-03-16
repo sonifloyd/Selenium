@@ -1,0 +1,77 @@
+What are XPath Axes?
+
+XPath axes XPath ke special keywords hote hain jo DOM (Document Object Model) me element ke relationship ko define karte hain.
+
+Inka use parent, child, sibling, ancestor elements locate karne ke liye hota hai.
+
+Simple words me:
+
+XPath axes allow us to navigate through different nodes in the DOM relative to the current element.
+
+Common XPath Axes in Selenium
+1️⃣ Parent Axis
+
+Current element ke parent element ko locate karta hai.
+
+Example:
+
+//input[@id='username']/parent::div
+
+➡️ Username input ke parent div ko locate karega.
+
+2️⃣ Child Axis
+
+Current element ke child elements locate karta hai.
+
+//div[@class='form']/child::input
+
+➡️ Div ke andar jo input hai usko locate karega.
+
+3️⃣ Ancestor Axis
+
+Current element ke sabhi parent levels locate karta hai.
+
+//input[@id='username']/ancestor::form
+
+➡️ Input ke upar jo form element hai usko locate karega.
+
+4️⃣ Following Axis
+
+Current element ke baad ke elements locate karta hai.
+
+//label[text()='Username']/following::input
+
+➡️ Label ke baad jo input hai usko locate karega.
+
+5️⃣ Following-Sibling Axis
+
+Current element ke same level ke next sibling elements locate karta hai.
+
+//label[text()='Username']/following-sibling::input
+
+➡️ Label ke next input field ko locate karega.
+
+6️⃣ Preceding Axis
+
+Current element ke pehle wale elements locate karta hai.
+
+//input[@id='password']/preceding::label
+
+➡️ Password input se pehle jo label hai usko locate karega.
+
+Interview Me Short Answer
+
+Agar interviewer puche to aise bolo:
+
+XPath axes are used to navigate through elements in the DOM relative to the current node. Common XPath axes include parent, child, ancestor, following, preceding, and sibling axes.
+
+💡 Interview Tip:
+Automation me sabse zyada use hone wale axes:
+
+parent
+
+ancestor
+
+following-sibling
+
+Ye dynamic elements locate karne me bahut useful hote hain.
