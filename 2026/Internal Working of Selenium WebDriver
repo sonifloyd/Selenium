@@ -1,0 +1,13 @@
+Selenium WebDriver works using a client-server architecture. The test script sends commands through the Selenium client library 
+to the browser driver such as ChromeDriver. The browser driver communicates with the real browser
+and performs the required actions, then sends the response back to the test script.
+
+Test Script
+     ↓
+Selenium Client Library
+     ↓
+Browser Driver
+     ↓
+Real Browser
+     ↓
+Response Back
