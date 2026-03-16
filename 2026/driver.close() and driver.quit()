@@ -1,0 +1,10 @@
+| Feature               | `driver.close()`                       | `driver.quit()`                                    |
+| --------------------- | -------------------------------------- | -------------------------------------------------- |
+| **Purpose**           | Current browser window close karta hai | Entire browser session close karta hai             |
+| **Windows/Tabs**      | Sirf active tab/window close hota hai  | Sabhi windows/tabs close ho jate hain              |
+| **WebDriver Session** | Session active reh sakta hai           | WebDriver session completely terminate ho jata hai |
+| **Usage**             | Jab ek specific window close karna ho  | Jab pura browser close karna ho                    |
+
+---------------------------------------
+driver.close() closes only the current browser window, 
+while driver.quit() closes all browser windows and terminates the entire WebDriver session.
