@@ -1,0 +1,10 @@
+XPath (XML Path) ek language hai jo HTML/XML document me elements ko locate karne ke liye use hoti hai.
+
+Selenium me XPath ka use web page ke elements (button, textbox, link, etc.) ko identify karne ke liye kiya jata hai 
+taaki automation script un par action perform kar sake.
+
+<input id="username" type="text">
+driver.findElement(By.xpath("//input[@id='username']"));
+
+Basic XPath Syntax
+//tagname[@attribute='value']
