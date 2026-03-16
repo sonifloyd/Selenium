@@ -1,0 +1,53 @@
+Difference between / and // in XPath
+
+XPath me / aur // dono elements ko locate karne ke liye path specify karte hain, lekin inka meaning different hota hai.
+
+Difference Table
+Symbol	Meaning	Description
+/	Direct child	Parent se direct child element locate karta hai
+//	Anywhere in DOM	DOM me kahi bhi element search karta hai
+
+-----------------
+Single Slash /
+
+/ ka use direct child element locate karne ke liye hota hai.
+
+Example HTML:
+
+<div>
+   <form>
+       <input id="username">
+   </form>
+</div>
+
+XPath:
+driver.findElement(By.xpath("/html/body/div/form/input"));
+
+-----------------------------------
+Double Slash //
+
+// ka use DOM me kahi bhi element search karne ke liye hota hai.
+
+Example:
+
+driver.findElement(By.xpath("//input[@id='username']"));
+
+➡️ Yeh DOM me kahi bhi username id wala input search karega.
+
+Isliye automation me mostly // use hota hai.
+
+Simple Example
+/html/body/div/input   → using /
+
+Exact path follow karta hai.
+
+//input[@id='username']  → using //
+
+Direct element search karta hai.
+
+Interview Me Short Answer
+
+Agar interviewer puche to aise bolo:
+
+In XPath, / is used to locate a direct child element from the root,
+while // is used to locate elements anywhere in the DOM regardless of their position.
