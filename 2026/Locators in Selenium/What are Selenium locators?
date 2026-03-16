@@ -1,0 +1,2 @@
+Selenium locators are used to identify and locate web elements on a web page so that Selenium can perform actions on them. 
+Common locators include ID, Name, Class Name, Tag Name, Link Text, Partial Link Text, CSS Selector, and XPath.
