@@ -1,0 +1,3 @@
+Selenium IDE is used for record and playback of test cases without coding.
+Selenium WebDriver is used to automate browsers using programming languages like Java.
+Selenium Grid is used to run tests in parallel on multiple browsers and machines.
