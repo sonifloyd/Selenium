@@ -1,0 +1,15 @@
+What are different XPath functions?
+
+Jaise:
+
+contains()
+
+starts-with()
+
+text()
+
+parent
+
+ancestor
+
+following-sibling
