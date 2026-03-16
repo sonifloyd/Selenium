@@ -1,0 +1,70 @@
+WebDriver driver = new ChromeDriver();
+driver.get("https://google.com");
+-----------------
+What Happens Internally
+1️⃣ Test Script Execution
+
+Automation script me jab driver.get("URL") run hota hai, to command Selenium Client Library ko send hoti hai.
+
+2️⃣ Command Converted to HTTP Request
+
+Selenium Client Library command ko W3C WebDriver Protocol request me convert karti hai.
+
+Example request:
+
+POST /session/{sessionId}/url
+{
+  "url": "https://google.com"
+}
+Request Sent to Browser Driver
+
+Yeh request browser driver ko send hoti hai:
+
+Chrome → ChromeDriver
+
+Firefox → GeckoDriver
+
+Edge → EdgeDriver
+
+4️⃣ Browser Driver Communicates with Browser
+
+Browser driver request ko browser ko forward karta hai.
+
+Browser ko instruction milta hai:
+
+➡️ Open the given URL
+
+5️⃣ Browser Loads the Web Page
+
+Browser:
+
+URL open karta hai
+
+Server ko request bhejta hai
+
+Page resources load karta hai (HTML, CSS, JS)
+
+6️⃣ Response Sent Back
+
+Page load hone ke baad browser driver Selenium ko response send karta hai:
+
+➡️ Page loaded successfully
+
+Flow Summary
+Test Script
+     ↓
+Selenium Client Library
+     ↓
+W3C WebDriver Protocol (HTTP request)
+     ↓
+Browser Driver (ChromeDriver)
+     ↓
+Browser opens URL
+Interview Me Short Answer
+
+Agar interviewer bole short me explain karo, to aise bolo:
+
+When we run driver.get("URL"), Selenium sends a command through the client library using the W3C WebDriver protocol
+to the browser driver such as ChromeDriver. 
+The browser driver then instructs the browser to open the specified URL, and once the page is loaded, 
+the response is sent back to the test script.
