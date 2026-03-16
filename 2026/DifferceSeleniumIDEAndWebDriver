@@ -1,0 +1,14 @@
+Selenium IDE is a record-and-playback tool used for simple test automation without coding, 
+while Selenium WebDriver is a programming interface used to automate browsers 
+using languages like Java or Python and is mainly used for building advanced automation frameworks.
+
+| Feature                   | Selenium IDE                   | Selenium WebDriver                                  |
+| ------------------------- | ------------------------------ | --------------------------------------------------- |
+| **Type**                  | Browser extension tool         | Programming API                                     |
+| **Coding**                | Coding required nahi hota      | Programming language required hoti hai              |
+| **Usage**                 | Record and playback testing    | Full automation framework                           |
+| **Flexibility**           | Limited functionality          | Highly flexible                                     |
+| **Programming Languages** | Support nahi karta             | Java, Python, C#, JavaScript support karta          |
+| **Complex Test Cases**    | Handle nahi kar sakta          | Complex scenarios handle kar sakta                  |
+| **Framework Integration** | Possible nahi                  | TestNG, JUnit, Maven ke sath integrate ho sakta hai |
+| **Real Project Usage**    | Mostly learning ya small tests | Real industry automation projects                   |
