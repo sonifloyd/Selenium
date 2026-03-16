@@ -1,0 +1,53 @@
+What is W3C WebDriver Protocol?
+
+W3C WebDriver Protocol ek standard protocol hai jo Selenium WebDriver aur browsers ke beech communication ko define karta hai.
+
+Is protocol ko World Wide Web Consortium (W3C) ne standardize kiya hai.
+Selenium 4 se WebDriver isi protocol ka use karta hai.
+
+Simple words me:
+
+W3C WebDriver protocol defines how Selenium commands are sent from the test script to the browser driver and how the browser performs those actions.
+-----------------------
+Test Script
+     ↓
+Selenium Client Library
+     ↓
+W3C WebDriver Protocol (HTTP Request)
+     ↓
+Browser Driver (ChromeDriver / GeckoDriver)
+     ↓
+Browser
+---------------------------------
+Example:
+Agar aap code likhte ho
+
+driver.get("https://google.com");
+
+To Selenium ek HTTP request send karta hai browser driver ko, aur browser driver browser ko command execute karne bolta hai.
+
+----------------------
+Why W3C WebDriver Protocol is Important
+
+1️⃣ Standardization
+Sab browsers ek hi standard follow karte hain.
+
+2️⃣ Better Cross-Browser Compatibility
+Chrome, Firefox, Edge sab easily support karte hain.
+
+3️⃣ No JSON Wire Protocol Issues
+Selenium 3 me JSON Wire Protocol use hota tha jo different browsers me inconsistent tha.
+
+4️⃣ More Stable Automation
+Commands predictable aur stable ho gaye hain.
+
+------------------------------
+Selenium Version Difference
+Selenium Version	Protocol Used
+Selenium 3	JSON Wire Protocol
+Selenium 4	W3C WebDriver Protocol
+--------------------------------------------
+W3C WebDriver Protocol is a standard protocol defined by the World Wide Web Consortium that allows Selenium WebDriver 
+to communicate with browsers using HTTP requests.
+Selenium 4 uses this protocol instead of the JSON Wire Protocol to ensure better standardization and cross-browser compatibility.
+
