@@ -1,0 +1,3 @@
+Selenium WebDriver supports multiple programming languages and browsers, allows real browser testing, executes faster than Selenium RC, 
+integrates easily with frameworks like TestNG and Jenkins,
+supports parallel execution with Selenium Grid, and it is an open-source tool.
