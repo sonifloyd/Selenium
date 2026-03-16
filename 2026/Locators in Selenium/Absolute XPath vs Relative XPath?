@@ -1,0 +1,31 @@
+XPath ka use web elements ko locate karne ke liye hota hai. XPath mainly 2 types ka hota hai:
+
+1️⃣ Absolute XPath
+2️⃣ Relative XPath
+
+Difference Between Absolute XPath and Relative XPath
+Feature	Absolute XPath	Relative XPath
+Path Start	Root node /html se start hota hai	DOM ke kisi bhi element se start ho sakta hai
+Syntax	/html/body/div/...	//tag[@attribute='value']
+Reliability	Fragile (page structure change hone par break ho jata hai)	Stable aur flexible
+Length	Bahut long aur complex hota hai	Short aur readable
+Usage	Rarely use hota hai	Mostly automation me use hota hai
+
+-------------------
+Absolute XPath
+driver.findElement(By.xpath("/html/body/div[1]/form/input[1]"));
+
+➡️ Yeh root se exact path follow karta hai.
+
+Problem:
+Agar page me ek extra div add ho gaya, to XPath break ho jayega.
+
+Relative XPath
+driver.findElement(By.xpath("//input[@id='username']"));
+
+➡️ Yeh direct element locate karta hai attribute ke basis par.
+
+Isliye automation me mostly relative XPath use hota hai.
+--------------------------------------
+Absolute XPath starts from the root node of the HTML document and follows the complete path to the element, whereas 
+Relative XPath starts from anywhere in the DOM and is more flexible and reliable. In automation, Relative XPath is generally preferred.
