@@ -1,0 +1,21 @@
+JSON Wire Protocol ek communication protocol tha jo Selenium me test script aur browser driver ke beech communication ke liye use hota tha.
+
+Simple words me:
+Yeh Selenium commands ko JSON format me convert karke HTTP request ke through browser driver ko send karta tha.
+--------------------------------------
+How JSON Wire Protocol Works
+
+Flow kuch is tarah hota tha:
+
+Test Script
+     ↓
+Selenium Client Library
+     ↓
+JSON Wire Protocol (JSON + HTTP request)
+     ↓
+Browser Driver (ChromeDriver / GeckoDriver)
+     ↓
+Browser
+----------------------------------
+JSON Wire Protocol is a communication protocol used in Selenium to send commands from the test script to the browser driver in JSON format over HTTP. 
+It was used in Selenium 3, but in Selenium 4 it has been replaced by the W3C WebDriver Protocol.
