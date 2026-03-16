@@ -1,0 +1,2 @@
+Selenium supports multiple browsers such as Chrome, Firefox, Edge, Safari, and Internet Explorer. To automate these browsers, 
+Selenium uses specific drivers like ChromeDriver, GeckoDriver, EdgeDriver, and SafariDriver
