@@ -1,0 +1,2 @@
+WebDriver is an interface in Selenium that is used to automate web browsers. It allows testers to interact with web elements such as buttons,
+text fields, and links using programming languages like Java or Python
