@@ -1,0 +1,55 @@
+Dynamic elements wo elements hote hain jinke attributes (id, class, etc.) har page load par change ho jate hain.
+Inhe handle karne ke liye Selenium me flexible locators aur XPath techniques use ki jati hain.
+
+Using Dynamic XPath (contains())
+
+Agar element ka attribute change hota hai to partial value use karte hain.
+
+Example HTML:
+
+<input id="user_12345">
+
+Next time:
+
+<input id="user_56789">
+
+Selenium code:
+
+driver.findElement(By.xpath("//input[contains(@id,'user')]"));
+----------------------------------------------------------------------------
+Using starts-with()
+
+Agar attribute same prefix se start ho raha ho.
+
+driver.findElement(By.xpath("//input[starts-with(@id,'user')]"));
+3️⃣ Using text() Method
+
+Agar element text stable hai to text use kar sakte hain.
+
+driver.findElement(By.xpath("//button[text()='Login']"));
+4️⃣ Using CSS Selector
+
+CSS selector bhi dynamic elements handle karne me help karta hai.
+
+driver.findElement(By.cssSelector("input[id^='user']"));
+
+^= → starts with
+
+5️⃣ Using Explicit Wait
+
+Kabhi kabhi element late load hota hai, isliye wait use karte hain.
+
+WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("username")));
+6️⃣ Using Parent or Sibling XPath
+
+Agar element ka direct attribute change hota hai to parent ya sibling relation use karte hain.
+
+driver.findElement(By.xpath("//label[text()='Username']/following-sibling::input"));
+Interview Me Short Answer
+
+Agar interviewer puche to aise bolo:
+
+Dynamic elements can be handled using dynamic XPath techniques such as contains() and starts-with(), 
+CSS selectors, explicit waits, and by locating elements using stable attributes or relationships like parent and sibling.
