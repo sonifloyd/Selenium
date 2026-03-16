@@ -1,0 +1,11 @@
+| Feature                | `driver.get()`                          | `driver.navigate().to()`                     |
+| ---------------------- | --------------------------------------- | -------------------------------------------- |
+| **Purpose**            | URL open karta hai                      | URL open karta hai                           |
+| **Wait Behavior**      | Page fully load hone tak wait karta hai | Page load hone ka strict wait nahi karta     |
+| **Navigation Methods** | Sirf URL open kar sakta hai             | Back, Forward, Refresh bhi support karta hai |
+| **Usage**              | Simple page opening                     | Navigation operations                        |
+
+---------------------------------
+driver.get() is used to open a URL and waits until the page is fully loaded, whereas driver.navigate().to() is 
+also used to open a URL but it belongs to 
+the navigation interface which supports additional operations like back, forward, and refresh.
