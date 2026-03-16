@@ -1,0 +1,15 @@
+Selenium provides different types of locators to identify web elements such as id, name,
+className, tagName, linkText, partialLinkText, CSS selector, and XPath.
+
+
+
+driver.findElement(By.id("username")); // id is fatest locator 
+
+driver.findElement(By.name("email"));
+driver.findElement(By.className("login-button"));
+
+driver.findElement(By.tagName("input"));
+driver.findElement(By.linkText("Login"));
+driver.findElement(By.partialLinkText("Log"));
+driver.findElement(By.cssSelector("#username"));
+driver.findElement(By.xpath("//input[@id='username']"));
