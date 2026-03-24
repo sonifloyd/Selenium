@@ -1,0 +1,32 @@
+"Page Object Model is a design pattern where each page is represented as a class containing elements and methods. 
+Page Factory is a Selenium feature that helps initialize elements 
+using @FindBy annotation. Page Factory can be used within POM to make code more readable and maintainable.
+
+--
+Main Difference (IMPORTANT)
+Feature	Page Factory	Page Object Model
+Type	Selenium feature	Design pattern
+Purpose	Initialize elements	Structure framework
+Uses	@FindBy	Classes for each page
+Dependency	Selenium	Independent concept
+Code style	Cleaner (less code)	More control
+
+--------------------------
+Page Factory is a Selenium class (API)
+It helps to initialize web elements using annotations
+
+Example:
+@FindBy(id="username")
+WebElement username;
+
+@FindBy(id="password")
+WebElement password;
+
+public LoginPage(WebDriver driver){
+    PageFactory.initElements(driver, this);
+}
+📌 Key Points:
+Uses @FindBy
+Reduces driver.findElement()
+Clean & readable code
+Built-in Selenium feature
