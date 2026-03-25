@@ -1,0 +1,20 @@
+driver.get("https://google.com");
+
+// open another page
+driver.get("https://facebook.com");
+
+// go back
+driver.navigate().back();
+
+// go forward
+driver.navigate().forward();
+
+// refresh (extra)
+driver.navigate().refresh();
+
+Explanation
+back() → previous page
+forward() → next page
+refresh() → reload page
+
+👉 Works same like browser buttons ⬅️➡️
