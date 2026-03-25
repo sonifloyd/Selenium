@@ -1,0 +1,4 @@
+In Selenium, we use isDisplayed() to check visibility. There is no direct method like isHidden(), so we use !isDisplayed() 
+for hidden elements. Also, Selenium throws NoSuchElementException if element is not present, unlike Playwright.
+
+driver.findElement(By.id("login")).isDisplayed();
