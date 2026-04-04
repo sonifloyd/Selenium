@@ -1,0 +1,6 @@
+WebElement uploadInput = driver.findElement(By.id("fileUploadInput"));
+uploadInput.sendKeys("/absolute/path/to/test-file.txt");
+
+// Verify file name is shown
+String fileName = driver.findElement(By.id("uploadedFileName")).getText();
+assertEquals("test-file.txt", fileName);
