@@ -21,3 +21,11 @@ Name
 CSS Selector
 XPath
 
+Pro Tip (tumhare level ke liye)
+
+👉 Always prefer:
+
+ID
+CSS
+XPath (only when needed)
+
