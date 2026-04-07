@@ -1,0 +1,36 @@
+XPath Likhnay ke Different Ways
+3. 🏷️ By Attribute
+//input[@id='username']
+//input[@name='email']
+4. 🧠 Using contains()
+
+👉 Dynamic values ke liye
+
+//input[contains(@id,'user')]
+5. 🔤 Using text()
+//button[text()='Login']
+6. 🔍 Using contains(text())
+//button[contains(text(),'Log')]
+7. 🚀 Using starts-with()
+//input[starts-with(@id,'user')]
+8. 🔗 AND / OR Condition
+//input[@type='text' and @name='username']
+
+//input[@type='text' or @name='email']
+9. 📍 Indexing
+(//input[@type='text'])[1]
+
+👉 Jab multiple elements ho
+
+10. 🧬 Parent → Child Traversal
+//div[@class='form']//input
+11. 🔙 Child → Parent (IMPORTANT 🔥)
+//input[@id='username']/parent::div
+12. 🔄 Following / Preceding
+//label[text()='Username']/following::input
+
+//input[@id='username']/preceding::label
+13. 🧲 Ancestor / Descendant
+//input[@id='username']/ancestor::form
+
+//div[@class='form']/descendant::input
