@@ -1,0 +1,23 @@
+1.driver.findElement(By.id("username"));
+2.driver.findElement(By.name("email"));
+3.driver.findElement(By.linkText("Login")); // ✔ Sirf <a> tag ke liye
+4.driver.findElement(By.partialLinkText("Log")); // partial text 
+driver.findElement(By.tagName("input"));//❌ Rare use (multiple elements milte hain)
+driver.findElement(By.className("btn-primary"));//❌ Multiple elements ho sakte hain
+css selector 
+driver.findElement(By.cssSelector("#username"));   // id
+driver.findElement(By.cssSelector(".btn"));        // class
+driver.findElement(By.cssSelector("input[name='email']"));
+
+Xpath 
+driver.findElement(By.xpath("//input[@id='username']"));
+driver.findElement(By.xpath("//button[text()='Login']"));
+driver.findElement(By.xpath("//input[contains(@id,'user')]"));
+
+Best Locator Strategy (Interview Answer)
+👉 Order follow karo:
+ID
+Name
+CSS Selector
+XPath
+
