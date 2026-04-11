@@ -1,0 +1,50 @@
+1.By ID(#Id)
+driver.findElement(By.cssSelector("#username"));
+
+2.By Class (.input-field)
+
+driver.findElement(By.cssSelector(".input-field"));
+
+3. Tag + Class
+button.btn
+driver.findElement(By.cssSelector("button.btn")).click();
+
+4.4. Attribute
+input[name='user_name']
+driver.findElement(By.cssSelector("input[name='user_name']")).sendKeys("test");
+
+5.5. Contains (Partial Match)
+input[name*='user']
+driver.findElement(By.cssSelector("input[name*='user']"));
+
+6. Starts With
+input[name^='user']
+driver.findElement(By.cssSelector("input[name^='user']"));
+
+7. Ends With
+input[name$='name']
+driver.findElement(By.cssSelector("input[name$='name']"));
+
+8. Parent → Child
+CSS
+div > input
+driver.findElement(By.cssSelector("div > input"));
+
+9. Ancestor → Descendant
+CSS
+div input
+driver.findElement(By.cssSelector("div input"));
+
+10. nth-child
+CSS
+ul li:nth-child(2)
+Selenium
+driver.findElement(By.cssSelector("ul li:nth-child(2)")).click();
+
+👉 Always try:
+
+ID ✅
+Attribute ✅
+Class ✅
+Avoid long XPath ❌
+
