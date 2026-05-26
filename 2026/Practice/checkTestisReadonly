@@ -1,0 +1,5 @@
+Assert.assertNotNull(
+driver.findElement(By.id("insideText"))
+      .getAttribute("readonly")
+);
+<input id="insideText" readonly>
