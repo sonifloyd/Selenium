@@ -1,0 +1,21 @@
+WebElement inputField =
+driver.findElement(By.id("insideText"));
+
+String actual =
+inputField.getAttribute("value");
+
+Assert.assertEquals(actual,
+                    "QA PlayGround");
+If you specifically want to use your CSS selector approach, then:
+String actualText =
+driver.findElement(
+    By.cssSelector("input[value='QA PlayGround']")
+).getAttribute("value");
+
+Assert.assertEquals(actualText,
+                    "QA PlayGround");
+
+--
+Method	Reads
+getText()	visible inner text
+getAttribute()	HTML attribute value // <input value="QA PlayGround"></input>
