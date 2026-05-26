@@ -1,0 +1,35 @@
+NoSuchElementException
+When Selenium cannot find element.
+driver.findElement(By.id("username"));
+Agar id wrong hai → exception.
+Solution
+Correct locator use karo
+Explicit wait use karo
+---------------
+2. StaleElementReferenceException
+Element DOM me change ho gaya.
+--------------------------
+3. TimeoutException
+Wait complete hone ke baad bhi condition satisfy nahi hui.
+----------------------------------
+4. ElementClickInterceptedException
+Koi popup/overlay click block kar raha
+-----------------------------------------------
+5. ElementNotInteractableException
+Element hidden/disabled hai
+--------------------------------------
+6. InvalidSelectorException
+Wrong XPath/CSS syntax.
+----------------------------------------
+
+NoSuchElementException vs StaleElementReferenceException
+NoSuchElement	StaleElement
+Element found hi nahi	Element pehle mila tha
+Locator wrong ho sakta	DOM updated ho gaya
+-----------------------------------
+Parent Exception Hierarchy
+Throwable
+ └── Exception
+      └── RuntimeException
+           └── WebDriverException
+                └── Selenium Exceptions
