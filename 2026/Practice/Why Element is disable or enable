@@ -1,0 +1,8 @@
+boolean status =
+driver.findElement(By.id("insideText"))
+      .isEnabled();
+
+System.out.println(status);
+How do you verify an element is disabled in Selenium?
+Answer:
+We use isEnabled() method. If it returns false, the element is disabled. If it returns true, the element is enabled.
