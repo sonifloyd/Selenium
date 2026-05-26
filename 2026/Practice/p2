@@ -1,0 +1,9 @@
+Why use clear() before sendKeys()?
+
+Answer:
+
+clear() removes existing text from the input field before entering new data to avoid appending text.
+WebElement inputField =
+driver.findElement(By.id("insideText"));
+
+inputField.clear();
