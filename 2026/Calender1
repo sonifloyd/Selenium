@@ -1,0 +1,27 @@
+How do you handle dynamically changing dates in Selenium?
+
+Answer:
+
+Use Java LocalDate
+Generate dynamic future/past date
+Extract:
+day
+month
+year
+Navigate calendar dynamically
+Select generated date
+-----------
+LocalDate.now()
+plusDays()
+minusDays()
+getDayOfMonth()
+getMonth()
+getYear()
+----------------
+Real-Time Example
+Flight Booking
+Departure = today + 7
+Return = today + 15
+Use:
+LocalDate.now().plusDays(7);
+LocalDate.now().plusDays(15);
